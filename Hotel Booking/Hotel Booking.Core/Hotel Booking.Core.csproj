@@ -5,10 +5,4 @@
         <RootNamespace>Hotel_Booking.Core</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Core" />
-      <Folder Include="Repositories" />
-      <Folder Include="Services" />
-    </ItemGroup>
-
 </Project>
