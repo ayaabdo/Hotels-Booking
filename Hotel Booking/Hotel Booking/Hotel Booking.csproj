@@ -36,6 +36,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <TypeScriptCompile Include="ClientApp\src\components\Navbar.tsx" />
       <TypeScriptCompile Include="ClientApp\src\pages\About.tsx" />
       <TypeScriptCompile Include="ClientApp\src\pages\Home.tsx" />
     </ItemGroup>
