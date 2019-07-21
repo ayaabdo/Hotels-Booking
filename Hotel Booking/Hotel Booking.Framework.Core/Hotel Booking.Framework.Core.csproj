@@ -2,15 +2,16 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>Hotel_Booking.Entities</RootNamespace>
+        <RootNamespace>Hotel_Booking.Framwork.Core</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Entities" />
+      <Folder Include="IServices" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Hotel Booking.Core\Hotel Booking.Core.csproj" />
+      <ProjectReference Include="..\Hotel Booking.Entities\Hotel Booking.Entities.csproj" />
     </ItemGroup>
 
 </Project>

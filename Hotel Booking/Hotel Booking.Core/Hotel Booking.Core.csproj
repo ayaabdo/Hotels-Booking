@@ -5,4 +5,7 @@
         <RootNamespace>Hotel_Booking.Core</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+    </ItemGroup>
+
 </Project>
