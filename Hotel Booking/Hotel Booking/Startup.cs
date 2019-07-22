@@ -22,7 +22,7 @@ namespace Hotel_Booking
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            DIConfiguration.Configure(services);
+            DIConfiguration.Configure(Configuration, services);
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
         }

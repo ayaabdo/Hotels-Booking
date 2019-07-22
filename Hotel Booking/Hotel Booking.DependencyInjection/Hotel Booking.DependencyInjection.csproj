@@ -4,15 +4,21 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <RootNamespace>Hotel_Booking.DependencyInjection</RootNamespace>
     </PropertyGroup>
+    
 
     <ItemGroup>
+      <ProjectReference Include="..\Hotel Booking.Core\Hotel Booking.Core.csproj" />
+    </ItemGroup>
+    
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\..\..\..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
       <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
         <HintPath>..\..\..\..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
       </Reference>
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Hotel Booking.Core\Hotel Booking.Core.csproj" />
-    </ItemGroup>
 
 </Project>
