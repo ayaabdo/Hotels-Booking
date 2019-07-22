@@ -38,7 +38,6 @@ namespace Hotel_Booking.DataAccess.Configuration
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(projectPath + "..//Hotel Booking/")
                 .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{envName}.json")
                 .Build();
 
             var connectionString = configuration.GetConnectionString("HotelBookingDatabase");

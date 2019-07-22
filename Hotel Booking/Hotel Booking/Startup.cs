@@ -47,6 +47,8 @@ namespace Hotel_Booking
                 app.UseHsts();
             }
 
+            // start auto migration when start
+            ContextConfiguration.RunMigrations(app);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -67,9 +69,6 @@ namespace Hotel_Booking
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
-            
-            // start auto migration when start
-            ContextConfiguration.RunMigrations(app);
         }
     }
 }
