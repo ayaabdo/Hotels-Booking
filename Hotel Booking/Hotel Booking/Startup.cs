@@ -1,3 +1,4 @@
+using Hotel_Booking.DataAccess.Configuration;
 using Hotel_Booking.DependencyInjection.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,7 +23,12 @@ namespace Hotel_Booking
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // static function to configure DI in separate project
             DIConfiguration.Configure(Configuration, services);
+            // static function to configure DB Contexts in separate project
+            ContextConfiguration.Configuration(Configuration, services);
+
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
         }
@@ -61,6 +67,9 @@ namespace Hotel_Booking
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            
+            // start auto migration when start
+            ContextConfiguration.RunMigrations(app);
         }
     }
 }

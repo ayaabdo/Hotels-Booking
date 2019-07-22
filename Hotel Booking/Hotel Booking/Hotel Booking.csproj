@@ -42,6 +42,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Hotel Booking.DataAccess\Hotel Booking.DataAccess.csproj" />
       <ProjectReference Include="..\Hotel Booking.DependencyInjection\Hotel Booking.DependencyInjection.csproj" />
     </ItemGroup>
 
