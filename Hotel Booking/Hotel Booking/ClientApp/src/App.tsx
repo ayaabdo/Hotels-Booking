@@ -1,20 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import 'semantic-ui-css/semantic.min.css'
+import GenericRoute from './components/GenericRoute';
+
+import { routes } from './utils/routing/routes';
 
 const App: React.FC = () => {
   return (
-    <div className='App'>
-      <Router>
-        <Navbar/>
-        <Route exact path={'/'} component={Home}/>
-        <Route path={'/about'} component={About}/>
-      </Router>
-    </div>
+    <Router>
+      <Navbar/>
+      <Switch>
+        {routes.map((route, idx) => <GenericRoute key={idx} {...route}/>)}
+      </Switch>
+    </Router>
   );
 };
+
 
 export default App;

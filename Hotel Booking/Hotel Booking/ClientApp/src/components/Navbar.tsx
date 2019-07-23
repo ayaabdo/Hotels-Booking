@@ -1,24 +1,32 @@
 import React, { useState, FC } from 'react';
 import { Container, Dropdown, Menu, MenuItemProps } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, NavLinkProps } from 'react-router-dom';
 
-const Navbar: FC = () => {
+const Navbar: FC = (props) => {
+  console.log(props);
 
-  const [activeItem, setActiveItem] = useState('Home');
-  const handleItemClick = (e: any, item: MenuItemProps) => setActiveItem(item.name || 'Home');
+  const [activeItem, setActiveItem] = useState('home');
+
+  const handleItemClick = (e: any, item: MenuItemProps) => setActiveItem(item.name || 'home');
+
+  const handleURLMatching = (match: NavLinkProps, location: NavLinkProps) => {
+    console.log(match, location)
+    
+  };
+
 
   return (
     <div className={'app-navbar'}>
       <Menu color={'red'} pointing secondary size='huge'>
         <Container>
-
           <Menu.Item header className={'logo-header'}>Travelshop.com</Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item
-              name='Home'
-              active={activeItem === 'Home'}
+              name='home'
+              active={activeItem === 'home'}
               onClick={handleItemClick}
-              as={Link} to="/"
+              as={NavLink} to="/"
+              isActive={handleURLMatching}
             />
             <Menu.Item
               name='about'
